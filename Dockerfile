@@ -24,5 +24,11 @@ RUN gulp build
 
 EXPOSE 8800
 
+ENV NODE_ENV=production
 RUN npm install pm2 -g
-CMD node bin/prod-web.sh
+CMD bin/prod-web.sh
+
+
+# 启动命令
+# CMD ["pm2-docker", "process.json"]
+#  https://yunnysunny.gitbooks.io/nodebook/content/09_node_production.html
