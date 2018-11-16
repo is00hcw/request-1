@@ -4,8 +4,8 @@ RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 WORKDIR /app
 
-RUN cnpm install gulp -g 
-RUN cnpm install bower -g
+RUN npm install gulp -g 
+RUN npm install bower -g
 
 # COPY ./package.json /app/
 COPY . /app/
