@@ -11,7 +11,7 @@ RUN npm install bower -g
 COPY . /app/
 
 RUN npm install
-RUN bower install
+RUN bower install --allow-root
 RUN gulp build
 
 
