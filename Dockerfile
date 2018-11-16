@@ -26,8 +26,8 @@ EXPOSE 8800
 
 ENV NODE_ENV=production
 RUN npm install pm2 -g
-CMD bin/prod-web.sh
-
+# CMD bin/prod-web.sh
+CMD ["pm2", "app.js","--no-daemon"]
 
 # 启动命令
 # CMD ["pm2-docker", "process.json"]
