@@ -10,7 +10,7 @@ RUN npm install bower -g
 # COPY ./package.json /app/
 COPY . /app/
 
-RUN cnpm install
+RUN npm install
 RUN bower install
 RUN gulp build
 
