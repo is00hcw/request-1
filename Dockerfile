@@ -5,19 +5,19 @@
 # https://www.jianshu.com/p/ab76ba86eafc
 # http://blog.w2fzu.com/2016/11/21/2016-11-21-Node-and-Mysql-deploy-on-Docker/
 
-FROM node:0.12
+FROM node:8
 COPY sources.list /etc/apt/sources.list
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 WORKDIR /app
 
-RUN npm install gulp -g 
-RUN npm install bower -g
+RUN cnpm install gulp -g 
+RUN cnpm install bower -g
 
 # COPY ./package.json /app/
 COPY . /app/
 
-RUN npm install
+RUN cnpm install
 RUN bower install --allow-root
 RUN gulp build
 
